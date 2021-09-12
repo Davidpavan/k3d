@@ -14,4 +14,12 @@ Try to create k8s manifest files
 ################################
 kubectl create deployment nginx --replicas=2 --image=nginx --dry-run=client -o yaml >k8s/nginx-deploy.yml
 k create service clusterip nginx-service --tcp=8080:8080 --dry-run=client -o yaml >k8s/nginx-service.yml
+k create 
 
+k apply -f k8s/nginx-deploy.yml
+k apply -f k8s/nginx-service.yml
+k apply -f k8s/ingress.yml
+
+k delete deployment/nginx
+k delete svc/nginx-service
+k delete ing/nginx-ingress
