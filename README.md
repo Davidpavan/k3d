@@ -26,3 +26,5 @@ k apply -f k8s/ingress.yml
 k delete deployment/nginx
 k delete svc/nginx-service
 k delete ing/nginx-ingress
+
+kubectl delete deployment --all
