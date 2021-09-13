@@ -16,6 +16,9 @@ kubectl create deployment nginx --replicas=2 --image=nginx --dry-run=client -o y
 k create service clusterip nginx-service --tcp=8080:8080 --dry-run=client -o yaml >k8s/nginx-service.yml
 k create 
 
+k3d node list
+k3d cluster list
+
 k apply -f k8s/nginx-deploy.yml
 k apply -f k8s/nginx-service.yml
 k apply -f k8s/ingress.yml
