@@ -28,3 +28,5 @@ k delete svc/nginx-service
 k delete ing/nginx-ingress
 
 kubectl delete deployment --all
+
+kubectl taint nodes k3d-k3d-cluster-agent-0 key1=value1:NoSchedule
